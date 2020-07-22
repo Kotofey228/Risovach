@@ -1,0 +1,80 @@
+@import url("//hello.myfonts.net/count/3b3446");
+@font-face {
+  src: url("../fonts/Muller-Regular/font.eot");
+  font-family: "Muller-Regular";
+  src: url("../fonts/Muller-Regular/font.woff2") format("woff2"), url("../fonts/Muller-Regular/font.woff") format("woff"), url("../fonts/Muller-Regular/font.eot?#iefix") format("embedded-opentype"), url("../fonts/Muller-Regular/font.ttf") format("truetype");
+}
+@font-face {
+  src: url("../fonts/Muller-Medium/font.eot");
+  font-family: "Muller-Medium";
+  src: url("../fonts/Muller-Medium/font.woff2") format("woff2"), url("../fonts/Muller-Medium/font.woff") format("woff"), url("../fonts/Muller-Medium/font.eot?#iefix") format("embedded-opentype"), url("../fonts/Muller-Medium/font.ttf") format("truetype");
+}
+@font-face {
+  src: url("../fonts/Muller-Bold/font.eot");
+  font-family: "Muller-Bold";
+  src: url("../fonts/Muller-Bold/font.woff2") format("woff2"), url("../fonts/Muller-Bold/font.woff") format("woff"), url("../fonts/Muller-Bold/font.eot?#iefix") format("embedded-opentype"), url("../fonts/Muller-Bold/font.ttf") format("truetype");
+}
+body {
+  font-family: Muller-Bold, sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(161.62deg, #242424 8.35%, #000000 62.19%);
+}
+
+h1.gold-title {
+  font-style: normal;
+  font-size: 150px;
+  line-height: 200px;
+  text-align: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+  background-image: linear-gradient(102.12deg, #FFD698 8.22%, #FDCB69 19.11%, #BF9752 31.08%, #FFC75A 45.29%, #F4D495 62.1%, #9C7831 71.9%, #FFBA34 89.86%);
+  box-sizing: border-box;
+  text-shadow: 0 0 24px rgba(255, 225, 169, 0.56);
+}
+
+h2 {
+  font-style: normal;
+  font-size: 40px;
+  line-height: 53px;
+  text-align: center;
+  background-image: linear-gradient(124.83deg, #FFFFFF -10.36%, #0E0E0E 124.55%, #000000 124.55%);
+}
+
+p {
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  background-image: linear-gradient(119.57deg, #FFFFFF -39.83%, rgba(255, 255, 255, 0) 139.07%);
+}
+
+.gradient-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.prize-line {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.prize-line .divider {
+  width: 16.55px;
+  height: 4.73px;
+  background: #424242;
+  margin: 0 6px;
+}
+.prize-line .prize {
+  margin: 0 -22px;
+}
+
+.help-text {
+  margin: auto;
+  max-width: 500px;
+}
+
+/*# sourceMappingURL=style.css.map */
