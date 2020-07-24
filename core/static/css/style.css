@@ -77,4 +77,64 @@ p {
   max-width: 500px;
 }
 
+.picture-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+.picture-fields .field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.picture-fields .field-border {
+  border: 6px solid rgba(255, 255, 255, 0.35);
+  box-sizing: content-box;
+  width: 304px;
+  height: 192px;
+  margin: 0 13.5px;
+}
+.picture-fields .field-border img {
+  display: none;
+  object-fit: cover;
+}
+.picture-fields span {
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  background-image: linear-gradient(119.57deg, #FFFFFF -39.83%, rgba(255, 255, 255, 0) 139.07%);
+}
+
+form.risovach-form {
+  display: flex;
+  flex-direction: column;
+}
+form.risovach-form label {
+  width: inherit;
+  height: inherit;
+}
+form.risovach-form label img {
+  width: inherit;
+  height: inherit;
+}
+form.risovach-form input {
+  opacity: 0;
+}
+form.risovach-form button.submit-button {
+  width: 304px;
+  height: 70px;
+  background: radial-gradient(132.47% 363.7% at 22.37% -97.14%, #5EFF44 0%, #193D14 100%);
+  box-shadow: 0 0 8px #FFFFFF;
+  border-radius: 40px;
+  border-width: 0;
+  margin: 50px auto;
+  justify-content: center;
+}
+form.risovach-form button.submit-button span {
+  font-size: 36px;
+  line-height: 48px;
+  background-image: linear-gradient(115.97deg, #FFFFFF 38.03%, #828282 83.37%);
+}
+
 /*# sourceMappingURL=style.css.map */

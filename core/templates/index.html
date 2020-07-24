@@ -3,44 +3,58 @@
 
 {% block content %}
     <h1 class="gold-title gradient-text">РИСОВАЧ</h1>
-    <h2 class="gradient-text">ДЕНЬ 3Й</h2>
-    <div class="prize-line">
-        <div class="day-box">
-            <img src="{% static 'img/checked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/checked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/current-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="prize">
-            <img src="{% static 'img/prize.svg' %}" alt="">
-        </div>
-    </div>
+    <h2 class="gradient-text">ДЕНЬ {{ day }}Й</h2>
+    {% include 'snippets/prize-line.html' %}
     <div class="help-text">
         <p class="gradient-text">Ежедневное задание должно быть
             загружено не позднее 22:00 по MSK</p>
         <p class="gradient-text">Если задание не сдано вовремя,
             серия автоматически сбрасывается</p>
     </div>
+    {% if not is_submitted %}
+        <form class="risovach-form" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="picture-fields">
+                <div class="field">
+                    <div class="field-border">
+                        <label for="pic1-input" id="avatar-label">
+                            <img id="pic1" src="#"/>
+                        </label>
+                        <input class="picture-input" id="pic1-input" type="file" name="main_pic"
+                               accept="image/jpeg,image/png,image/gif" required/>
+                    </div>
+                    <span class="gradient-text">{{ form.main_pic.label }}</span>
+                </div>
+                <div class="field">
+                    <div class="field-border">
+                        <label for="pic2-input" id="avatar-label">
+                            <img id="pic2" src="#"/>
+                        </label>
+                        <input class="picture-input" id="pic2-input" type="file" name="new_technique_pic"
+                               accept="image/jpeg,image/png,image/gif" required/>
+                    </div>
+                    <span class="gradient-text">{{ form.new_technique_pic.label }}</span>
+                </div>
+                <div class="field">
+                    <div class="field-border">
+                        <label for="pic3-input" id="avatar-label">
+                            <img id="pic3" src="#"/>
+                        </label>
+                        <input class="picture-input" id="pic3-input" type="file" name="sketch_pic"
+                               accept="image/jpeg,image/png,image/gif" required/>
+                    </div>
+                    <span class="gradient-text">{{ form.sketch_pic.label }}</span>
+                </div>
+
+            </div>
+            <button class="btn btn-primary submit-button" type="submit"><span class="gradient-text">Сохранить</span>
+            </button>
+        </form>
+    {% endif %}
+{% endblock %}
+
+{% block extrascript %}
+    <script src="{% static 'js/load-image.all.min.js' %}"></script>
+    <script src="{% static 'js/picture-preview.js' %}"></script>
 {% endblock %}

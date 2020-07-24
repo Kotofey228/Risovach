@@ -1,35 +1,20 @@
-{%  %}
+{% load static %}
 
 <div class="prize-line">
+    {% for i in week %}
         <div class="day-box">
-            <img src="{% static 'img/checked-box.svg' %}" alt="">
+            {% if i == day and is_submitted == False %}
+                <img src="{% static 'img/current-box.svg' %}" alt="">
+            {% elif i <= day %}
+                <img src="{% static 'img/checked-box.svg' %}" alt="">
+            {% else %}
+                <img src="{% static 'img/unchecked-box.svg' %}" alt="">
+            {% endif %}
         </div>
         <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/checked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/current-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="day-box">
-            <img src="{% static 'img/unchecked-box.svg' %}" alt="">
-        </div>
-        <div class="divider"></div>
-        <div class="prize">
-            <img src="{% static 'img/prize.svg' %}" alt="">
-        </div>
+    {% endfor %}
+
+    <div class="prize">
+        <img src="{% static 'img/prize.svg' %}" alt="">
     </div>
+</div>
