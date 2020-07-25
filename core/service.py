@@ -20,11 +20,11 @@ def get_submit_streak(user):
         today_submitted = True
 
     for date in submits:
-        delta = compare_date - date
+        delta = compare_date.day - date.day
 
-        if delta.days == 1:
+        if delta == 1:
             day += 1
-        elif delta.days == 0:
+        elif delta == 0:
             pass
         else:
             break
